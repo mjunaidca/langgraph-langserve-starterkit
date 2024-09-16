@@ -1,0 +1,16 @@
+name: alce
+
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    container_name: ServerServiceCont
+    volumes:
+      - ./server:/code
+    ports:
+      - "9020:9000"
+
+networks:
+  default:
+    driver: bridge
